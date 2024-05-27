@@ -11,7 +11,7 @@ $tableName = "tb_produk";
         aliquam modi eum exercitationem corrupti atque rerum quam mollitia quasi, eaque magnam qui fuga laboriosam
         pariatur nulla? Ducimus.
         <br>
-        
+
 
         <button class="btn btn-outline-primary mt-3 py-2 px-3" data-bs-toggle="modal" data-bs-target="#tambah-modal">
             <svg xmlns="http://www.w3.org/2000/svg" width="23" fill="currentColor" class="" viewBox="0 0 16 16">
@@ -27,7 +27,7 @@ $tableName = "tb_produk";
                     <th>No. </th>
                     <th>Nama</th>
                     <th>Deskripsi</th>
-                   
+                    
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -36,17 +36,18 @@ $tableName = "tb_produk";
                 $q = "SELECT * FROM $tableName";
                 $res = mysqli_query($conn, $q);
                 $count = 1;
-                while($data = mysqli_fetch_assoc($res)){
+                while ($data = mysqli_fetch_assoc($res)) {
                 ?>
                 <tr>
-                    <td><?= $count++?>.</td>
-                    <td><?= $data['nama']?></td>
-                    <td><?= $data['deskripsi']?></td>
+                    <td><?= $count++ ?>.</td>
+                    <td><?= $data['nama'] ?></td>
+                    <td><?= $data['deskripsi'] ?></td>
+                   
                     <td>
                         <!-- EDIT BTN -->
                         <button type="button" id="edit-btn" class="btn btn-warning" data-bs-toggle="modal"
-                            data-bs-target="#edit-modal" data-nama="<?= $data['nama']?>" data-deskripsi="<?= $data['deskripsi']?>"
-                            data-id="<?= $data['id_produk']?>">
+                            data-bs-target="#edit-modal" data-nama="<?= $data['nama'] ?>"
+                            data-deskripsi="<?= $data['deskripsi'] ?>" data-id="<?= $data['id_produk'] ?>">
                             <i class="m-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-pencil " viewBox="0 0 16 16">
                                     <path
@@ -54,7 +55,8 @@ $tableName = "tb_produk";
                                 </svg></i>EDIT
                         </button>
                         <!-- DELETE BTN -->
-                        <button type="button" id="delete-btn" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal" data-id="<?= $data['id_produk']?>">
+                        <button type="button" id="delete-btn" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#delete-modal" data-id="<?= $data['id_produk'] ?>">
                             <i class="m-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                     <path
@@ -63,7 +65,7 @@ $tableName = "tb_produk";
                                         d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
                                 </svg></i>HAPUS
                         </button>
-                        <a class="btn btn-primary" href="index.php?page=detail&id=<?= $data['id_produk']?>">
+                        <a class="btn btn-primary" href="index.php?page=detail&id=<?= $data['id_produk'] ?>">
                             Details
                         </a>
                     </td>
@@ -127,15 +129,15 @@ $tableName = "tb_produk";
                     <div class="row">
                         <input type="text" id="uid" class="form-control" hidden disabled>
                         <div class="row">
-                        <div class="col">
-                            <label for="">Nama</label>
-                            <input type="text" class="form-control" id="unama" value="">
+                            <div class="col">
+                                <label for="">Nama</label>
+                                <input type="text" class="form-control" id="unama" value="">
+                            </div>
+                            <div class="col">
+                                <label for="" class="mt-">Deskripsi</label>
+                                <input type="teks" class="form-control" id="udeskripsi" value="">
+                            </div>
                         </div>
-                        <div class="col">
-                            <label for="" class="mt-">Deskripsi</label>
-                            <input type="teks" class="form-control" id="udeskripsi" value="">
-                        </div>
-                    </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -157,7 +159,7 @@ $tableName = "tb_produk";
             </div>
 
             <form action="" method="post">
-                
+
                 <div class="modal-body">
                     <input type="number" value="" id="did" hidden>
                     <h1 class="fs-5">Anda Yakin Ingin Menghapus?</h1>
@@ -173,4 +175,5 @@ $tableName = "tb_produk";
         </div>
     </div>
 </div>
+
 <script src="pages/produk/produk.js"></script>

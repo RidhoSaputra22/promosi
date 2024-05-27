@@ -247,7 +247,7 @@ grid-column: 1/4;
     border-radius: 10px;
 
     *{
-        /* outline: 1px solid red; */
+        outline: 1px solid red;
     }
 
     img{
@@ -259,7 +259,7 @@ grid-column: 1/4;
     .detail{
         /* margin-left: 70px; */
         width: 100%;
-        height: 60%;
+        height: 100%;
 
         
         .text{
