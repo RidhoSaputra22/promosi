@@ -66,7 +66,10 @@ $tableName = "tb_produk";
                                 </svg></i>HAPUS
                         </button>
                         <a class="btn btn-primary" href="index.php?page=detail&id=<?= $data['id_produk'] ?>">
-                            Details
+                            Galeri
+                        </a>
+                        <a class="btn btn-primary" href="index.php?page=range&id=<?= $data['id_produk'] ?>">
+                            Range Harga
                         </a>
                     </td>
                 </tr>

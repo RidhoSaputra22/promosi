@@ -96,56 +96,7 @@ if(mysqli_num_rows($isProdukExist)< 1){
 
         </div>
 
-        <div class="detail">
 
-
-            <div class="text p-2">
-
-                <div class="title">Range Harga </div>
-
-                <div class="subtitle">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores nesciunt
-                    blanditiis mollitia totam odio voluptates repellendus facere, maxime at fuga?</div>
-            </div>
-            <div class="actions">
-                <button class="btn btn-outline-primary  py-2 px-3" data-bs-toggle="modal"
-                    data-bs-target="#tambah-range">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="23" fill="currentColor" class="" viewBox="0 0 16 16">
-                        <path
-                            d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5 8 5.961 14.154 3.5zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z" />
-                    </svg> Tambah
-                </button>
-            </div>
-            <div class="image-wraper ">
-
-                <?php
-               $q = "SELECT * FROM tb_range WHERE id_produk = $id";
-               $res = mysqli_query($conn, $q);
-               $count = 1;
-               while($data = mysqli_fetch_assoc($res)){
-               ?>
-
-
-                <div class=" m-1 d-flex align-items-center w-100 ">
-                    <input class="p-2 m-1 flex-grow-1 " type="text" value="122-123" readonly>
-                    <button class="btn btn-warning  " data-bs-toggle="modal" data-bs-target="#edit-range"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-pencil " viewBox="0 0 16 16">
-                            <path
-                                d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
-                        </svg></button>
-
-                    <button class="btn btn-danger  " data-bs-toggle="modal" data-bs-target="#hapus-range">X</button>
-
-                </div>
-
-                <?php
-               }
-               ?>
-
-            </div>
-
-
-        </div>
 
     </section>
 
@@ -251,67 +202,6 @@ if(mysqli_num_rows($isProdukExist)< 1){
     </div>
 </div>
 
-
-<!-- Tambah Range-->
-<div class="modal fade" id="tambah-range" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Range</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class=" m-1 d-flex align-items-center">
-                    <input class="p-2 m-1 flex-grow-1 " type="text" value="122-123">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Edit Range -->
-<div class="modal fade" id="edit-range" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Range</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class=" m-1 d-flex align-items-center">
-                    <input class="p-2 m-1 flex-grow-1 " type="text" value="122-123">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Hapus Range -->
-<div class="modal fade" id="hapus-range" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Range</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <script src="pages/produk/detail.js"></script>

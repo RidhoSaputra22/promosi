@@ -49,6 +49,9 @@ if ($_SESSION['login']=="") {
                 case 'detail':
                     include "pages/produk/detail.php";
                 break;
+                case 'range':
+                    include "pages/produk/range.php";
+                break;
                 case 'transaksi':
                     include "pages/transaksi.php";
                 break;
