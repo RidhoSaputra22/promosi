@@ -1,4 +1,4 @@
-console.log("Produk.js Called");
+console.log("Produk.js Calledd");
 
 const url = "controller/produk.php";
 const page = "index.php?page=produk";
@@ -7,17 +7,22 @@ let img = "../assets/img/produk/";
 
 function tambah() {
     let nama = $('#tnama').val()
+    let hp = $('#thp').val()
     let deskripsi = $('#tdeskripsi').val()
+    let files = $('#tfoto')[0].files[0]
     let aksi = "tambah"
     
-    if (nama == "" || deskripsi == "" ) {
+    if (nama == "" || deskripsi == "" || files == null) {
         {
             Swal.fire('', 'field tidak boleh kosong', 'error');
         }
     } else {
         let fd = new FormData();
         fd.append('nama', nama)
+        fd.append('hp', hp)
         fd.append('deskripsi', deskripsi)
+        fd.append('foto', files)
+
         
         fd.append('aksi', aksi)
 
@@ -55,15 +60,26 @@ function tambah() {
 // Edit
 $(document).on("click", "#edit-btn", function() {
     let nama = $(this).attr("data-nama");
+    let hp = $(this).attr("data-hp");
     let deskripsi = $(this).attr("data-deskripsi");
    
 
     let id = $(this).attr("data-id");
     let foto = $(this).attr("data-foto");
+
   
     $('#unama').val(nama)
     $('#udeskripsi').val(deskripsi)
     $('#uid').val(id)
+    $('#uhp').val(hp)
+
+
+    
+    let location = "../assets/img/produk/";
+    location += foto
+
+    document.getElementById('pratinjauGambar0').innerHTML = '<img class="img-thumbnail" src="'+location+'" width="100px" height="100px"/>';
+
 
 })
 
@@ -72,6 +88,13 @@ function edit() {
     let nama = $('#unama').val()
     let deskripsi = $('#udeskripsi').val()
     let id = $('#uid').val()
+    let hp = $('#uhp').val()
+
+    let foto = $('#ufoto').val()
+
+
+    let files = $('#ufoto')[0].files[0]
+
     // console.log(foto);
     let aksi = "edit"
 
@@ -84,7 +107,12 @@ function edit() {
         let fd = new FormData();
         fd.append('nama', nama)
         fd.append('id', id)
+        fd.append('hp', hp)
         fd.append('deskripsi', deskripsi)
+        fd.append('foto', files)
+        fd.append('nmfoto', foto)
+
+
 
         fd.append('aksi', aksi)
 

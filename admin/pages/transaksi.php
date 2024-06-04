@@ -27,6 +27,11 @@ $tableName = "view_transaksi";
                     <th>No. </th>
                     <th>Nama Produk</th>
                     <th>Nama User</th>
+                    <th>Alamat</th>
+                    <th>Tanggal</th>
+                    <th>Harga</th>
+
+
                 </tr>
             </thead>
             <tbody>
@@ -40,6 +45,10 @@ $tableName = "view_transaksi";
                     <td><?= $count++?>.</td>
                     <td><?= $data['nama_produk']?></td>
                     <td><?= $data['nama_user']?></td>
+                    <td><?= $data['alamat_user']?></td>
+                    <td><?= $data['tanggal']?></td>
+                    <td><?= number_format($data['range1'])?> - <?= number_format($data['range1'])?></td>
+
                     
                 </tr>
                 <?php
